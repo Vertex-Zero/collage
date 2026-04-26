@@ -1,14 +1,12 @@
+import { AutoVideo } from "../components/AutoVideo";
+
 const VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
 
 export function Velorah() {
   return (
     <section className="theme-velorah relative min-h-screen overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <AutoVideo
         src={VIDEO}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
@@ -53,7 +51,7 @@ export function Velorah() {
 
         <div className="flex flex-col items-center text-center px-6 pt-32 pb-40 py-[90px] max-w-7xl mx-auto">
           <h1
-            className="text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-[-2.46px] font-normal animate-fade-rise"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-1.5px] sm:tracking-[-2.46px] font-normal animate-fade-rise px-2"
             style={{ fontFamily: "'Instrument Serif', serif", color: "white" }}
           >
             Where <em className="not-italic text-white/50">dreams</em> rise{" "}

@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { useRef } from "react";
+import { AutoVideo } from "../components/AutoVideo";
 import { HlsVideo } from "../components/HlsVideo";
 
 const HERO_VIDEO =
@@ -31,8 +32,8 @@ function ConcentricLogo({ size = "small" }: { size?: "small" | "large" }) {
 
 function MindloopNav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-8 md:px-28 py-4">
-      <div className="flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-28 py-4">
+      <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-3">
           <ConcentricLogo />
           <span className="font-bold text-white tracking-tight">Mindloop</span>
@@ -69,13 +70,9 @@ function MindloopNav() {
 function MindloopHero() {
   return (
     <section className="relative h-screen overflow-hidden bg-black">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+      <AutoVideo
         src={HERO_VIDEO}
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent z-[1]" />
 
@@ -98,7 +95,7 @@ function MindloopHero() {
 
         <motion.h1
           {...fadeUp(0.1)}
-          className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-[-2px] text-white mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium tracking-[-1px] sm:tracking-[-2px] text-white mb-6"
         >
           Get <span className="font-serif italic font-normal">Inspired</span> with Us
         </motion.h1>
@@ -146,7 +143,7 @@ function SearchChanged() {
     <section className="relative bg-black px-6 md:px-28 pt-52 md:pt-64 pb-6 md:pb-9 text-center">
       <motion.h2
         {...fadeUp(0)}
-        className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-[-2px] text-white mb-8"
+        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium tracking-[-1px] sm:tracking-[-2px] text-white mb-8"
       >
         Search has <span className="font-serif italic font-normal">changed.</span> Have you?
       </motion.h2>
@@ -255,11 +252,7 @@ function Mission() {
   return (
     <section className="relative pt-0 pb-32 md:pb-44 bg-black overflow-hidden">
       <div className="flex justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <AutoVideo
           src={MISSION_VIDEO}
           className="w-[800px] h-[800px] max-w-full object-cover rounded-full"
         />
@@ -285,11 +278,7 @@ function Solution() {
         </h2>
       </div>
 
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <AutoVideo
         src={SOLUTION_VIDEO}
         className="w-full aspect-[3/1] object-cover rounded-2xl mb-20"
       />

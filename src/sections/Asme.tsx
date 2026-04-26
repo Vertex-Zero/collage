@@ -40,10 +40,21 @@ function useVideoFadeLoop() {
       rafRef.current = requestAnimationFrame(step);
     };
 
+    video.muted = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    const tryPlay = () => {
+      const p = video.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    tryPlay();
+
     const onLoaded = () => {
       video.style.opacity = "0";
       fadingOutRef.current = false;
       animateOpacity(1, FADE_MS);
+      tryPlay();
     };
 
     const onTimeUpdate = () => {
@@ -127,7 +138,7 @@ export function Asme() {
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[20%]">
         <h1
-          className="text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-tight whitespace-nowrap"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-tight"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           Built for the curious

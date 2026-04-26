@@ -7,6 +7,7 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
+import { AutoVideo } from "../components/AutoVideo";
 import { BlurText } from "../components/BlurText";
 import { HlsVideo } from "../components/HlsVideo";
 
@@ -59,12 +60,8 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative overflow-visible" style={{ height: 1000 }}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+    <section className="relative overflow-hidden h-[820px] md:h-[1000px]">
+      <AutoVideo
         src={HERO_VIDEO}
         className="absolute left-0 top-0 w-full h-full object-cover z-0"
       />
@@ -78,10 +75,7 @@ function Hero() {
       />
       <Navbar />
 
-      <div
-        className="relative z-10 flex flex-col items-center text-center px-6"
-        style={{ paddingTop: 150 }}
-      >
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-28 md:pt-[150px]">
         <div className="liquid-glass rounded-full px-1 py-1 inline-flex items-center gap-2 text-xs text-white">
           <span className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold">
             New

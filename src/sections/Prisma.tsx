@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { useRef } from "react";
+import { AutoVideo } from "../components/AutoVideo";
 import { WordsPullUp } from "../components/WordsPullUp";
 
 const HERO_VIDEO =
@@ -19,11 +20,7 @@ function Hero() {
   return (
     <section className="h-screen p-4 md:p-6">
       <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <AutoVideo
           src={HERO_VIDEO}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -231,11 +228,7 @@ function Features() {
         >
           {[
             <div key="0" className="relative rounded-2xl overflow-hidden bg-[#212121] h-full min-h-[320px]">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
+              <AutoVideo
                 src={FEATURE_VIDEO}
                 className="absolute inset-0 w-full h-full object-cover"
               />
