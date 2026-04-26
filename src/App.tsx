@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { VideoUnlock } from "./components/VideoUnlock";
 import { Mindloop } from "./sections/Mindloop";
 import { Velorah } from "./sections/Velorah";
 import { Asme } from "./sections/Asme";
@@ -94,6 +95,7 @@ export default function App() {
 
   return (
     <main className="bg-black text-white min-h-screen">
+      <VideoUnlock />
       <PageSelector active={active} onSelect={setActive} />
       {active === "mindloop" && <Mindloop />}
       {active === "asme" && <Asme />}
